@@ -85,7 +85,7 @@ def init_scene() {
 
     let sunDirection = float3(PI / 12f, -PI * 0.25f, 0f)
     let sun = create_node(NodeData(rotation = quat4(sunDirection)))
-    add_component(sun, new DirectionLight())
+    add_component(sun, new DirectionalLight())
 
     let renderSettings = create_render_settings()
 
@@ -279,16 +279,16 @@ class DampingRestitutionSample : Component {
     def override on_update() {
         get_component(ball) $(var rigidBody : RigidBody?) {
             if (is_action_pressed("moveDown")) {
-                apply_rigid_body_impulse(rigidBody, float3(0, 0, -1) * get_delta_time() * 10.)
+                apply_impulse(rigidBody, float3(0, 0, -1) * get_delta_time() * 10.)
             }
             if (is_action_pressed("moveUp")) {
-                apply_rigid_body_impulse(rigidBody, float3(0, 0, 1) * get_delta_time() * 10.)
+                apply_impulse(rigidBody, float3(0, 0, 1) * get_delta_time() * 10.)
             }
             if (is_action_pressed("moveRight")) {
-                apply_rigid_body_impulse(rigidBody, float3(1, 0, 0) * get_delta_time() * 10.)
+                apply_impulse(rigidBody, float3(1, 0, 0) * get_delta_time() * 10.)
             }
             if (is_action_pressed("moveLeft")) {
-                apply_rigid_body_impulse(rigidBody, float3(-1, 0, 0) * get_delta_time() * 10.)
+                apply_impulse(rigidBody, float3(-1, 0, 0) * get_delta_time() * 10.)
             }
         }
 

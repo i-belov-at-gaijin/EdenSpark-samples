@@ -857,11 +857,9 @@ textField:i=-1249840359
 __itemPrefab:i64=0
 _selectedIndex:i=0
 items{
-vs{
 v:t="Option 1"
 v:t="Option 2"
 v:t="Option 3"
-}
 }
 }
 }
@@ -992,7 +990,7 @@ content:i=223544561
 maskArea:i=1510837513
 verticalScrollbar:i=-1210582703
 horizontalScrollbar:i=0
-scrollSpeed:r=5
+scrollSpeed:r=25
 scrollDirection:t="Vertical"
 enableOverscroll:b=no
 elasticity:r=0.1
@@ -1121,11 +1119,9 @@ textField:i=833658755
 __itemPrefab:i64=0
 _selectedIndex:i=0
 items{
-vs{
 v:t="Option 1"
 v:t="Option 2"
 v:t="Option 3"
-}
 }
 }
 }
@@ -1256,7 +1252,7 @@ content:i=320433639
 maskArea:i=-1742251607
 verticalScrollbar:i=1184975219
 horizontalScrollbar:i=0
-scrollSpeed:r=5
+scrollSpeed:r=25
 scrollDirection:t="Vertical"
 enableOverscroll:b=no
 elasticity:r=0.1
@@ -1922,7 +1918,7 @@ content:i=1862179730
 maskArea:i=-245974059
 verticalScrollbar:i=-832554149
 horizontalScrollbar:i=0
-scrollSpeed:r=5
+scrollSpeed:r=25
 scrollDirection:t="Both"
 enableOverscroll:b=yes
 elasticity:r=0.1

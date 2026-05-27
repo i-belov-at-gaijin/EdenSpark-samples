@@ -162,7 +162,7 @@ prefab:i64=1382267385076481718
 parent:i=1470188861
 pos:p3=325, -20, 0
 }
-instance{
+diff{
 root:i=-150935916
 node{
 uid:i=-309508422
@@ -172,7 +172,7 @@ size:p2=600, 48
 }
 }
 }
-instance{
+diff{
 root:i=-1863307296
 node{
 uid:i=998342432
@@ -196,7 +196,7 @@ up:i=1
 uid:i=1953450736
 }
 }
-instance{
+diff{
 root:i=1687762338
 node{
 uid:i=998342432

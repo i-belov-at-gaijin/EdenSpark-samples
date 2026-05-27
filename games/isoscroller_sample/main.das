@@ -11,7 +11,7 @@ def init_world() {
     let room = instantiate_prefab(roomPrefab)
 
     let sun = create_node(NodeData(name = "camera", rotation = quat4(float3(-2f * PI / 3f, -PI / 3f, 8f * PI / 9f))))
-    sun.add_component(new DirectionLight())
+    sun.add_component(new DirectionalLight())
 
     renderSettings.instantiate_prefab()
 }
@@ -267,7 +267,7 @@ class CharacterInput : Component {
         let rotateSpeed = PI * 4. * get_delta_time()
         if (length_sq(moveDir) > 0.) {
             let inputYaw = acos(moveDir.z) * (asin(moveDir.x) >= 0. ? 1. : -1.)
-            let curYaw = acos(nodeId.localForward.z) * (asin(nodeId.localForward.x) >= 0. ? 1. : -1.)
+            let curYaw = safe_acos(nodeId.localForward.z) * (safe_asin(nodeId.localForward.x) >= 0. ? 1. : -1.)
             let yawDiff = clamp(angle_diff(curYaw, inputYaw), -rotateSpeed, rotateSpeed)
             nodeId.worldRotation = quat4(0, curYaw + yawDiff, 0)
         }

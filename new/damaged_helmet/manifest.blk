@@ -4,3 +4,5 @@ hdRendering:b=yes
 title:t="Damaged Helmet"
 description:t="Showcase of PBR materials render with emissive textures.\nModel by Ed Mackey"
 preview:t=".project/preview.jpg"
+genre:t="simulation"
+numberOfPlayers:t="single"

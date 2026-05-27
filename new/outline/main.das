@@ -19,7 +19,7 @@ def get_nice_color() : float3 {
 
     let sunDirection = float3(PI / 12f, -PI * 0.25f, 0f)
     let sun = create_node(NodeData(rotation = quat4(sunDirection), name = "sun"))
-    add_component(sun, new DirectionLight())
+    add_component(sun, new DirectionalLight())
 
     let renderSettings = create_render_settings()
 

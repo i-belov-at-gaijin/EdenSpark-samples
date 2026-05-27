@@ -66,7 +66,7 @@ def process_contact(contact_pos, contact_norm : float3) {
 def process_jump(contact_norm : float3) {
     if (isJumpScheduled && jumpCooldown > 0.0) {
         let impulse = contact_norm * character.setup.jumpStrength * character.setup.mass
-        apply_rigid_body_impulse(character.node?.RigidBody, impulse)
+        apply_impulse(character.node?.RigidBody, impulse)
         isJumpScheduled = false
     }
 }
@@ -156,7 +156,7 @@ def move_character(dt : float) {
 
         let braking = exp(-brakingAmount * dt)
         rigidBody.angularVelocity = length(rigidBody.angularVelocity) * rightDir * braking
-        apply_rigid_body_torque(rigidBody, torqueDelta)
+        apply_torque(rigidBody, torqueDelta)
     }
 }
 
@@ -227,7 +227,7 @@ def on_initialize() {
     add_component(camera.node, new Camera(zfar = 1000.0, fovAxis = FovAxis.Horizontal, fov = TO_RAD * 90f))
 
     let sun = create_node(NodeData(rotation = quat4(PI / 3f, -PI * 0.25f, 0f)))
-    add_component(sun, new DirectionLight())
+    add_component(sun, new DirectionalLight())
 
     let renderSettings = create_render_settings()
     get_component(renderSettings) $(var ssao : SSAOSettings?) {

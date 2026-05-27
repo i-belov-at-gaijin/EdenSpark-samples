@@ -186,9 +186,7 @@ itemsContainerNode:i=-1737449993
 textField:i=855200986
 __itemPrefab:i64=0
 _selectedIndex:i=0
-items{
-vs{}
-}
+items{}
 }
 UIAnimationListDropdown{
 __model:i64=-723652444342239225
@@ -322,7 +320,7 @@ content:i=-1737449993
 maskArea:i=1693983573
 verticalScrollbar:i=1074634808
 horizontalScrollbar:i=0
-scrollSpeed:r=5
+scrollSpeed:r=25
 scrollDirection:t="Vertical"
 enableOverscroll:b=no
 elasticity:r=0.1
@@ -441,12 +439,15 @@ guid:t="0198eb66-f61a-7cbe-a059-7eb6b0b5debd"
 type:i=2
 refId:i64=7671086374533409833
 }
-instance{
+diff{
 root:i=-591604865
 node{
 uid:i=1
 newComps{
-Animator{enabled:b=yes;}
+Animator{
+enabled:b=yes
+enableInertialBlending:b=yes
+}
 SingleAnimationPlayer{
 enabled:b=yes
 loop:b=yes

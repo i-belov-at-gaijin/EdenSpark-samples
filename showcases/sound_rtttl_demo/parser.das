@@ -53,10 +53,10 @@ def parse_defaults(defaults : string#) : Defaults {
 
     var value = 0
     var key = ' '
-    for (char in defaults) {
-        if (is_number(char)) {
+    for (ch in defaults) {
+        if (is_number(ch)) {
             value *= 10
-            value += char - '0'
+            value += ch - '0'
             if (key == 'd' && is_correct_duration(value)) {
                 parsedDefaults.duration = value
             } elif (key == 'o' && is_correct_octave(value)) {
@@ -64,17 +64,17 @@ def parse_defaults(defaults : string#) : Defaults {
             } elif (key == 'b' && float(value) != 0.f) {
                 parsedDefaults.beatPerMin = float(value)
             }
-        } elif (is_alpha(char)) {
-            if (char != 'd' && char != 'o' && char != 'b') {
-                error("Note parser error: wrong format of default pair {defaults} at char {string(utf8_encode(uint(char)))}, example d=16,o=4,b=70")
+        } elif (is_alpha(ch)) {
+            if (ch != 'd' && ch != 'o' && ch != 'b') {
+                error("Note parser error: wrong format of default pair {defaults} at char {string(utf8_encode(uint(ch)))}, example d=16,o=4,b=70")
                 break
             }
-            key = char
+            key = ch
             value = 0
-        } elif (char == ',' || char == '=') {
+        } elif (ch == ',' || ch == '=') {
             continue
         } else {
-            error("Note parser error: wrong format of default pair {defaults} at char {string(utf8_encode(uint(char)))}, example d=16,o=4,b=70")
+            error("Note parser error: wrong format of default pair {defaults} at char {string(utf8_encode(uint(ch)))}, example d=16,o=4,b=70")
             break
         }
     }
